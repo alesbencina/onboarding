@@ -1,0 +1,35 @@
+id: import_companies_2
+label: Companies CSV file migration
+source:
+  plugin: 'csv'
+  path: '/var/www/drupalvm/drupal/web/companies.txt'
+  header_row_count: 1
+  delimiter: ','
+  enclosure: '"'
+  keys:
+    - id
+  column_names:
+    0:
+      id: 'id'
+    1:
+      title: 'Company name'
+    2:
+      description: 'Description'
+    3:
+      email: 'Email'
+    4:
+      phone: 'company phone'
+    5:
+      website: 'website'
+
+process:
+  title: title
+  field_c_description: description
+  field_contact: email
+  field_phonenumber: phone
+  field_website: website
+  type:
+      plugin: default_value
+      default_value: company
+destination:
+  plugin: entity:node

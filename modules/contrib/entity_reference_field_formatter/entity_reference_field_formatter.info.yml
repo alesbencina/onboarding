@@ -1,0 +1,13 @@
+name: Entity Reference Formatter
+type: module
+description: 'Add an formatter for entity refernce field.'
+package: Field types
+# version: '8.x-1.0-rc1'
+# core: '8.x'
+# project: 'entity_reference_field_formatter'
+
+# Information added by Drupal.org packaging script on 2017-07-21
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'entity_reference_field_formatter'
+datestamp: 1500613146

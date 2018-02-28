@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.smallteaser
+    - field.field.node.company.field_address
+    - field.field.node.company.field_c_description
+    - field.field.node.company.field_contact
+    - field.field.node.company.field_industry
+    - field.field.node.company.field_logo
+    - field.field.node.company.field_phonenumber
+    - field.field.node.company.field_website
+    - node.type.company
+  module:
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_twocol_bricks
+      library: layout_discovery/twocol_bricks
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      top:
+        - field_logo
+      first_above:
+        - node_title
+        - field_c_description
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+id: node.company.smallteaser
+targetEntityType: node
+bundle: company
+mode: smallteaser
+content:
+  field_c_description:
+    type: text_trimmed
+    weight: 2
+    region: first_above
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+  field_logo:
+    type: image
+    weight: 0
+    region: top
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_address: true
+  field_contact: true
+  field_industry: true
+  field_phonenumber: true
+  field_website: true
+  links: true

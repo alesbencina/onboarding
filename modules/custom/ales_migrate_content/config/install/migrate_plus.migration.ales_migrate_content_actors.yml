@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ales_migrate_content
+    - node
+id: ales_migrate_content_actors
+label: actors
+source:
+  plugin: csv
+  path: public://actors.csv
+  header_row_count: 1
+  keys:
+    - id
+  constants:
+      slash: /
+process:
+  nid:
+    plugin: default_value
+    default_value: actor
+  title: name
+destination:
+  plugin: 'entity:node'
+  default_bundle: actor
+migration_dependencies: {  }

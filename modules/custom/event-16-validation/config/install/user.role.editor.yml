@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - event
+id: editor
+label: Editor
+weight: -7
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access toolbar'
+  - 'create events'
+  - 'delete events'
+  - 'edit events'
+  - 'restful delete entity:event'
+  - 'restful get entity:event'
+  - 'restful patch entity:event'
+  - 'restful post entity:event'
+  - 'view event revisions'
+  - 'view the administration theme'

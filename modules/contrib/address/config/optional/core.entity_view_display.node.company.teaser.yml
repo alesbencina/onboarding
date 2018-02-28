@@ -1,0 +1,88 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.company.field_address
+    - field.field.node.company.field_c_description
+    - field.field.node.company.field_contact
+    - field.field.node.company.field_industry
+    - field.field.node.company.field_logo
+    - field.field.node.company.field_phonenumber
+    - field.field.node.company.field_website
+    - image.style.thumbnail
+    - node.type.company
+  module:
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col_stacked
+      library: ds/ds_2col_stacked
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      header:
+        - field_logo
+        - node_title
+      footer:
+        - field_c_description
+        - links
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+id: node.company.teaser
+targetEntityType: node
+bundle: company
+mode: teaser
+content:
+  field_c_description:
+    type: text_trimmed
+    weight: 2
+    region: footer
+    label: hidden
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+  field_logo:
+    type: image
+    weight: 0
+    region: header
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: footer
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_address: true
+  field_contact: true
+  field_industry: true
+  field_phonenumber: true
+  field_website: true

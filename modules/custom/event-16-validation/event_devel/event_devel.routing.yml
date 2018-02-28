@@ -1,0 +1,38 @@
+# Provide a route to place example code into.
+event_devel.evaluate_test_code:
+  path: '/evaluate-test-code'
+  defaults:
+    _title: 'Evaluate test code'
+    _controller: 'Drupal\event_devel\Controller\TestController::evaluateTestCode'
+  # Grant administrators access to this route.
+  requirements:
+    _permission: 'administer site configuration'
+  # Make sure that the result of this route is never cached.
+  options:
+    no_cache: true
+
+# Provide a route to apply entity updates.
+event_devel.update_entity_field_definitions:
+  path: '/update-entity-field-definitions'
+  defaults:
+    _title: 'Update entity/field definitions'
+    _controller: 'Drupal\event_devel\Controller\TestController::updateEntityFieldDefinitions'
+  # Grant administrators access to this route.
+  requirements:
+    _permission: 'administer site configuration'
+  # Make sure that the result of this route is never cached.
+  options:
+    no_cache: true
+
+# Provide a form that generates HTTP Basic authentication information.
+event_devel.basic_auth_info:
+  path: '/basic-auth-info'
+  defaults:
+    _title: 'HTTP Basic authentication information'
+    _form: 'Drupal\event_devel\Form\BasicAuthInfoForm'
+  # Grant administrators access to this route.
+  requirements:
+    _permission: 'administer site configuration'
+  # Make sure that the result of this route is never cached.
+  options:
+    no_cache: true

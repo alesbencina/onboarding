@@ -1,0 +1,5 @@
+name: 'custom rest'
+type: module
+description: 'rest module'
+core: 8.x
+package: 'Other'

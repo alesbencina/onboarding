@@ -1,0 +1,112 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.company.field_address
+    - field.field.node.company.field_c_description
+    - field.field.node.company.field_contact
+    - field.field.node.company.field_industry
+    - field.field.node.company.field_logo
+    - field.field.node.company.field_phonenumber
+    - field.field.node.company.field_website
+    - node.type.company
+  module:
+    - address
+    - ds
+    - image
+    - link
+    - taxonomy
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_twocol_bricks
+      library: layout_discovery/twocol_bricks
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      top:
+        - node_title
+        - field_paragraphs
+      first_above:
+        - field_logo
+        - field_c_description
+      middle:
+        - field_industry
+        - field_website
+        - field_phonenumber
+        - field_contact
+      first_below:
+        - field_address
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.company.default
+targetEntityType: node
+bundle: company
+mode: default
+content:
+  field_address:
+    type: address_default
+    weight: 7
+    region: first_below
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_c_description:
+    type: text_default
+    weight: 2
+    region: first_above
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_contact:
+    type: basic_string
+    weight: 6
+    region: middle
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_industry:
+    type: entity_reference_rss_category
+    weight: 3
+    region: middle
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_logo:
+    type: image
+    weight: 1
+    region: first_above
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_phonenumber:
+    type: string
+    weight: 5
+    region: middle
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_website:
+    type: link_separate
+    weight: 4
+    region: middle
+    label: above
+    settings:
+      trim_length: 80
+      rel: ''
+      target: ''
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+hidden:
+  links: true

@@ -1,0 +1,9 @@
+uuid: f9791062-af3e-4a08-82cf-55d4689787b6
+langcode: en
+status: true
+dependencies: {  }
+name: Industry
+vid: industry
+description: 'Type of industry'
+hierarchy: 0
+weight: 0

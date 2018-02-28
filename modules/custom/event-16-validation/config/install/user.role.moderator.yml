@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - event
+id: moderator
+label: Moderator
+weight: -8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access toolbar'
+  - 'edit events'
+  - 'restful delete entity:event'
+  - 'restful get entity:event'
+  - 'restful patch entity:event'
+  - 'restful post entity:event'
+  - 'view event revisions'
+  - 'view the administration theme'
+

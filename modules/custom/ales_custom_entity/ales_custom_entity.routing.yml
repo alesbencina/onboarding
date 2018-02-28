@@ -1,0 +1,6 @@
+ales_custom_entity.recommendation:
+  path: 'node/{node}/{recommendation_type}'
+  defaults:
+    _controller: '\Drupal\ales_custom_entity\Controller\RecommendationController::content'
+  requirements:
+    _permission: 'access content'

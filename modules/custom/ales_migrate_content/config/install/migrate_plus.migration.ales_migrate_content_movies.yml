@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - migrate_plus.migration.ales_migrate_content_actors
+  module:
+    - ales_migrate_content
+    - node
+id: ales_migrate_content_movies_migration
+label: Movies
+source:
+  plugin: csv
+  path: public://movies.csv
+  header_row_count: 1
+  keys:
+    - id
+  constants:
+    slash: /
+process:
+  type:
+    plugin: default_value
+    default_value: movie
+  title: title
+  langcode:
+    plugin: default_value
+    default_value: en
+  field_plot: plot
+  field_actor:
+   -
+    plugin: explode
+    source: actors
+    delimiter: ','
+   -
+    plugin: migration
+    migration: ales_migrate_content_actors
+  field_created:
+    -
+     plugin: date_time_to_timestamp
+     source: created
+destination:
+  plugin: 'entity:node'
+  default_bundle: movie
+migration_dependencies:
+  required:
+    - ales_migrate_content_actors
